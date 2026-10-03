@@ -41,13 +41,13 @@ function Home() {
       formData.append("resume", resume);
 
 
-      const response = await fetch(
-        "http://localhost:5000/resume/analyze",
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
+     const response = await fetch(
+  `${import.meta.env.VITE_API_URL}/resume/analyze`,
+  {
+    method: "POST",
+    body: formData,
+  }
+);
 
 
       const data = await response.json();
